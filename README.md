@@ -91,7 +91,7 @@ recipe-finder/
 
 ##  Deployment
 
-The live version will be hosted on **GitHub Pages** (link to be added after deployment).
+The live version will be hosted on **https://ankush1433.github.io/Recipe-Finder/** (link to be added after deployment).
 
 ---
 
