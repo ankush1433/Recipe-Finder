@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo"> <span>RecipeFinder</span></div>
+      <nav class="nav-categories" id="navCategories">
+        <button class="cat-btn active" data-cat="">All</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Discover <em>Delicious</em><br/>Recipes</h1>
+    <p>Explore thousands of meals from cuisines around the world</p>
+  </section>
+
+  <main class="main">
+    <div id="loadingSpinner" class="spinner-wrap">
+      <div class="spinner"></div>
+      <p>Fetching recipes…</p>
+    </div>
+
+    <div id="errorMsg" class="error-msg hidden"></div>
+
+    <div id="recipeGrid" class="recipe-grid"></div>
+
+    <div id="emptyState" class="empty-state hidden">
+      <span>🍳</span>
+      <p>No recipes found.</p>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Powered by <a href="https://www.themealdb.com" target="_blank">TheMealDB</a> &mdash; Built with Vanilla JS</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
