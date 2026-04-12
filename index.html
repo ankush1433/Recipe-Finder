@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,37 +9,63 @@
 </head>
 <body>
 
+  <!-- ── Header ── -->
   <header class="header">
     <div class="header-inner">
-      <div class="logo"> <span>RecipeFinder</span></div>
+      <div class="logo">🍽️ <span>RecipeFinder</span></div>
+
+      <div class="header-controls">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search recipes…" autocomplete="off"/>
+          <button class="search-clear hidden" id="searchClear">✕</button>
+        </div>
+
+        <select id="sortSelect" class="sort-select">
+          <option value="">Sort</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+
+        <button id="favToggle" class="fav-toggle" title="Show favourites">❤️</button>
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+
+    <div class="nav-wrap">
       <nav class="nav-categories" id="navCategories">
         <button class="cat-btn active" data-cat="">All</button>
       </nav>
     </div>
   </header>
 
+  <!-- ── Hero ── -->
   <section class="hero">
     <h1>Discover <em>Delicious</em><br/>Recipes</h1>
     <p>Explore thousands of meals from cuisines around the world</p>
   </section>
 
+  <!-- ── Main ── -->
   <main class="main">
+    <div id="resultsInfo" class="results-info hidden"></div>
+
     <div id="loadingSpinner" class="spinner-wrap">
       <div class="spinner"></div>
       <p>Fetching recipes…</p>
     </div>
 
     <div id="errorMsg" class="error-msg hidden"></div>
-
     <div id="recipeGrid" class="recipe-grid"></div>
 
     <div id="emptyState" class="empty-state hidden">
       <span>🍳</span>
       <p>No recipes found.</p>
     </div>
+
+    <div id="pagination" class="pagination hidden"></div>
   </main>
 
-  <!-- Modal -->
+  <!-- ── Modal ── -->
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-backdrop" id="modalBackdrop"></div>
     <div class="modal-box">
